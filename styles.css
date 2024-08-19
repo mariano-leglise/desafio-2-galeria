@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(./assets/fondo.jpg);
+  box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.galeria {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  max-width: 90vw;
+  max-height: 90vh;
+  
+}
+
+.imagen {
+  width: 110px;
+  height: 300px;
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: transform 0.2s, background-color 0.3s;
+  overflow: hidden;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+
+}
+
+.imagen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transition: opacity 1.3s;
+  opacity: 1; /* se ve la imagen negra */
+}
+
+.imagen:hover::before {
+  opacity: 0; /* La capa negra desaparece cuando paso el mouse */
+}
+
+.imagen:hover {
+  transform: scale(1.1); /* agranda la imagen cuando paso el mouse */
+}
+
+footer {
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(71, 71, 71);
+}
